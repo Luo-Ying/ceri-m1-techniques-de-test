@@ -1,0 +1,30 @@
+# Spécifie la version de l'API CircleCI à utiliser
+version: 2.1
+
+# Définit les workflows qui seront exécutés dans CircleCI
+workflows:
+  # Configuration du workflow pour la branche master
+  version: 2.1
+  build_and_test:
+    jobs:
+      # Configuration du job de build et de test
+      - build_and_test:
+          filters:
+            branches:
+              only: master
+
+# Définit les jobs qui seront exécutés dans le workflow
+jobs:
+  # Configuration du job de build et de test
+  build_and_test:
+    # Définit l'environnement pour le job
+    docker:
+      - image: cimg/openjdk:17.0.1
+    # Définit les étapes à exécuter pour le job
+    steps:
+      # Récupère le code source depuis GitHub
+      - checkout
+      # Installe les dépendances du projet
+      - run: mvn dependency:go-offline
+      # Exécute les tests unitaires
+      - run: mvn clean test
