@@ -37,7 +37,8 @@ public class IPokemonFactoryTest {
         pokemonFactory = new IPokemonFactory() {
             @Override
             public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-                return pokemon;
+                Pokemon newPokemon = new Pokemon(index, "pokemonx", 999, 999, 999, cp, hp, dust, candy, 99);
+                return newPokemon ;
             }
         };
 
@@ -45,7 +46,16 @@ public class IPokemonFactoryTest {
 
     @Test
     void createPokemonTest(){
-        assertEquals(pokemon, pokemonFactory.createPokemon(index, cp, hp, dust, candy));
+        Pokemon createPokemonTest = pokemonFactory.createPokemon(0, cp, hp, dust, candy);
+        assertEquals(pokemon.getIndex(), createPokemonTest.getIndex());
+        assertEquals(pokemon.getName(), createPokemonTest.getName());
+        assertEquals(pokemon.getAttack(), createPokemonTest.getAttack());
+        assertEquals(pokemon.getDefense(), createPokemonTest.getDefense());
+        assertEquals(pokemon.getStamina(), createPokemonTest.getStamina());
+        assertEquals(pokemon.getCp(), createPokemonTest.getCp());
+        assertEquals(pokemon.getHp(), createPokemonTest.getHp());
+        assertEquals(pokemon.getDust(), createPokemonTest.getDust());
+        assertEquals(pokemon.getCandy(), createPokemonTest.getCandy());
     }
 
 }
