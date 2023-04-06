@@ -10,6 +10,13 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
+      - name: coverage
+        run: mvn -B test
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: a09da491-4dc1-4596-8c54-a4463e6a571b
 
 
   build-and-test:
@@ -19,11 +26,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: coverage
-        run: mvn -B test
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
-        with:
-          token: a09da491-4dc1-4596-8c54-a4463e6a571b
 
