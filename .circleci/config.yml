@@ -1,6 +1,9 @@
 # Spécifie la version de l'API CircleCI à utiliser
 version: 2.1
 
+orbs:
+  codecov: codecov/codecov@v3.2.4
+
 # Définit les workflows qui seront exécutés dans CircleCI
 workflows:
   # Configuration du workflow pour la branche master
@@ -39,3 +42,4 @@ jobs:
       - run: mvn dependency:go-offline
       # Exécute les tests unitaires
       - run: mvn clean test
+      - codecov/upload
