@@ -1,5 +1,13 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+
+    Author: LUO Yingqi
+    Group: m1-ALT
+
+
+[![CircleCI](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test)
+[![codecov](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test)
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
