@@ -2,7 +2,7 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@v3
+  codecov: codecov/codecov@3.10.0
 
 # Définit les workflows qui seront exécutés dans CircleCI
 workflows:
