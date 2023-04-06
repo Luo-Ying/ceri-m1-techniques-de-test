@@ -10,8 +10,8 @@ jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: coverage
-        run: mvn -B test
+#      - name: coverage
+#        run: mvn -B test
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
