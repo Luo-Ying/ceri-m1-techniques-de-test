@@ -1,0 +1,6 @@
+codecov:
+  require_ci_to_pass: yes
+  notify:
+    slack:
+      - room: my-slack-room
+        format: html
