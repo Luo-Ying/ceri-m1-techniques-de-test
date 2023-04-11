@@ -15,6 +15,25 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version> <!-- 指定 Checkstyle 版本号 -->
+                <executions>
+                    <execution>
+                        <id>checkstyle</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation> <!-- 指定 Checkstyle 配置文件路径 -->
+                    <failOnViolation>true</failOnViolation> <!-- 是否在检查到规则违反时失败构建 -->
+                    <!-- 可以在这里添加更多的 Checkstyle 插件配置 -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
