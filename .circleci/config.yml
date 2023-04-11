@@ -44,3 +44,4 @@ jobs:
       # Exécute les tests unitaires
       - run: mvn clean test
       - codecov/upload
+#      - javadoc -d ../docs/api ../src/main/java/fr/univavignon/pokedex/api/*.java
