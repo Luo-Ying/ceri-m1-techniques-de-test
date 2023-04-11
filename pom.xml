@@ -19,17 +19,21 @@
                 <version>3.2.0</version> <!-- 指定 Checkstyle 版本号 -->
                 <executions>
                     <execution>
-                        <id>checkstyle</id>
-                        <phase>validate</phase>
+                        <phase>test</phase>
+                        <configuration>
+                            <configLocation>google_checks.xml</configLocation>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>true</failsOnError>
+<!--                            <outputFile>checkstyle.html</outputFile>-->
+                        </configuration>
                         <goals>
-                            <goal>check</goal>
+                            <goal>checkstyle</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation> <!-- 指定 Checkstyle 配置文件路径 -->
-                    <failOnViolation>true</failOnViolation> <!-- 是否在检查到规则违反时失败构建 -->
-                    <!-- 可以在这里添加更多的 Checkstyle 插件配置 -->
+                    <outputDirectory>checkstyle/</outputDirectory>
+                    <!-- 其他配置参数 -->
                 </configuration>
             </plugin>
             <plugin>
