@@ -8,6 +8,7 @@
 [![CircleCI](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test)
 [![codecov](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test)
 [![Checkstyle](docs/badges/checkstyle-result.svg)](https://htmlpreview.github.io/?https://github.com/Luo-Ying/ceri-m1-techniques-de-test/blob/master/checkstyle/checkstyle.html)
+[![Javadoc](https://img.shields.io/badge/Javadoc-Online-blue.svg)](https://htmlpreview.github.io/?https://github.com/Luo-Ying/ceri-m1-techniques-de-test/blob/master/docs/api/index-all.html)
 
 ## Introduction
 
