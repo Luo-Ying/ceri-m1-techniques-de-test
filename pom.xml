@@ -51,7 +51,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <outputDirectory>checkstyle/</outputDirectory>
+                    <outputDirectory>https://drive.google.com/drive/folders/10-ubVKcc6wYQ2xNfr6TazApVyiZk1bnW/</outputDirectory>
                     <!-- 其他配置参数 -->
                 </configuration>
             </plugin>
