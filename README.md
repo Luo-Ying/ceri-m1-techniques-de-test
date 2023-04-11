@@ -7,7 +7,7 @@
 
 [![CircleCI](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test.svg?style=svg)](https://circleci.com/gh/Luo-Ying/ceri-m1-techniques-de-test)
 [![codecov](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test/branch/master/graph/badge.svg)](https://codecov.io/gh/Luo-Ying/ceri-m1-techniques-de-test)
-[![Checkstyle](https://img.shields.io/badge/Checkstyle-Passing-brightgreen)](https://github.com/Luo-Ying/ceri-m1-techniques-de-test/checkstyle/checkstyle.html)
+[![Checkstyle](https://img.shields.io/badge/Checkstyle-Passing-brightgreen)](https://github.com/checkstyle/checkstyle)
 
 ## Introduction
 
