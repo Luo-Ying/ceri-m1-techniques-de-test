@@ -64,7 +64,7 @@ jobs:
           command: javadoc -d docs/api src/main/java/fr/univavignon/pokedex/api/*.java
       - persist_to_workspace:
           root: .
-          paths: docs
+          paths: docs/api
 
   docs-deploy:
     docker:
@@ -72,7 +72,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: docs/
+          at: docs/api
       - run:
           name: Install and configure dependencies
           command: |
