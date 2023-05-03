@@ -84,4 +84,4 @@ jobs:
             - "3e:d7:44:67:8f:cd:ca:3c:be:d7:14:35:34:7b:ab:8f"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/
+          command: gh-pages --dist docs/api
