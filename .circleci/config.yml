@@ -16,10 +16,9 @@ workflows:
           filters:
             branches:
               only: master
-      - docs
       - docs-deploy:
           requires:
-            - docs
+            - build_and_test
 
 # Définit les jobs qui seront exécutés dans le workflow
 jobs:
