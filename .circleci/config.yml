@@ -61,7 +61,7 @@ jobs:
           command: sudo apt-get install openjdk-11-jdk-headless -y
       - run:
           name: Docs-Build
-          command: javadoc -d ./docs/api ./src/main/java/fr/univavignon/pokedex/api/*
+          command: javadoc -d docs/api src/main/java/fr/univavignon/pokedex/api/*.java
       - persist_to_workspace:
           root: .
           paths: docs
