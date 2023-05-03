@@ -16,6 +16,10 @@ workflows:
           filters:
             branches:
               only: master
+      - docs
+      - docs-deploy:
+        requires:
+          - docs
 
 # Définit les jobs qui seront exécutés dans le workflow
 jobs:
@@ -25,11 +29,14 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - run: mvn clean install
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
       - run: mvn jacoco:report
       - run:
           name: Upload Coverage to Codecov
           command: bash <(curl -s https://codecov.io/bash) -t a09da491-4dc1-4596-8c54-a4463e6a571b
+
   # Configuration du job de build et de test
   build_and_test:
     # Définit l'environnement pour le job
@@ -44,4 +51,38 @@ jobs:
       # Exécute les tests unitaires
       - run: mvn clean test
       - codecov/upload
-      - run: javadoc -d ./docs/api ./src/main/java/fr/univavignon/pokedex/api/*.java
+      - run:
+          name: OpenJDK-PPA
+          command: sudo add-apt-repository ppa:openjdk-r/ppa
+      - run:
+          name: Update
+          command: sudo apt-get update
+      - run:
+          name: OpenJDK-Install
+          command: sudo apt-get install openjdk-11-jdk-headless -y
+      - run:
+          name: Docs-Build
+          command: javadoc -d ./docs/api ./src/main/java/fr/univavignon/pokedex/api/*
+      - persist_to_workspace:
+          root: .
+          paths: docs
+
+  docs-deploy:
+    docker:
+      - image: node:20
+    steps:
+      - checkout
+      - attach_workspace:
+          at: docs/
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@3.0.0
+            git config user.email "luoyingqifr@gmail.com"
+            git config user.name "Luo-Ying"
+      - add_ssh_keys:
+          fingerprints:
+            - "3e:d7:44:67:8f:cd:ca:3c:be:d7:14:35:34:7b:ab:8f"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dist docs/
