@@ -61,10 +61,10 @@ jobs:
           command: sudo apt-get install openjdk-11-jdk-headless -y
       - run:
           name: Docs-Build
-          command: javadoc -d docs/api src/main/java/fr/univavignon/pokedex/api/*.java
+          command: javadoc -d docs src/main/java/fr/univavignon/pokedex/api/*.java
       - persist_to_workspace:
           root: .
-          paths: docs/api
+          paths: docs
 
   docs-deploy:
     docker:
@@ -72,7 +72,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: docs/api
+          at: docs
       - run:
           name: Install and configure dependencies
           command: |
@@ -84,4 +84,4 @@ jobs:
             - "3e:d7:44:67:8f:cd:ca:3c:be:d7:14:35:34:7b:ab:8f"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/api
+          command: gh-pages --dist docs
