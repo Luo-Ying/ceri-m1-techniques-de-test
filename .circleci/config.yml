@@ -18,8 +18,8 @@ workflows:
               only: master
       - docs
       - docs-deploy:
-        requires:
-          - docs
+          requires:
+            - docs
 
 # Définit les jobs qui seront exécutés dans le workflow
 jobs:
