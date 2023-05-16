@@ -101,7 +101,11 @@ public class IPokemonTrainerFactoryTest {
 
     @Test
     void createTrainerTest(){
-        assertEquals(pokemonTrainer, pokemonTrainerFactory.createTrainer(name, team, pokedexFactory));
+        PokemonTrainer pokemonTrainerTest = pokemonTrainerFactory.createTrainer(name, team, pokedexFactory);
+        assertEquals(pokemonTrainer, pokemonTrainerTest);
+        assertEquals(pokemonTrainer.getName(),pokemonTrainerTest.getName());
+        assertEquals(pokemonTrainer.getTeam(),pokemonTrainerTest.getTeam());
+        assertEquals(pokemonTrainer.getPokedex(),pokemonTrainerTest.getPokedex());
     }
 
 }
